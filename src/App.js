@@ -13,6 +13,10 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.refs.search.focus();
+  }
+
   searchBookmarks = event => {
     const query = event.target.value;
     
@@ -33,6 +37,8 @@ class App extends React.Component {
         <input  type="text"
                 name="search"
                 placeholder="Start typing to start searching for your bookmark..."
+                tabindex="0"
+                ref="search"
                 value={query} 
                 onChange={this.searchBookmarks}
         />
