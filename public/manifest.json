@@ -10,6 +10,13 @@
   "icons": {
     "24": "images/icon.png"
   },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F"
+      }
+    }
+  },
   "content_security_policy": "script-src 'self' 'sha256-p1WKSDRLazwpIo1hVSgse+vPtlzMta5e9+gKCpVCPLA='; object-src 'self'",
   "manifest_version": 2
 }
