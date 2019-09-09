@@ -1,5 +1,8 @@
 This is a Chrome extension to search and open bookmarks in a quick way. People who works a lot with bookmarks usually struggle with finding the bookmark and also to open it, since need to keep clicking on a lot of folders, this is designed to make this task easy, and only that.
 
+# How it looks like
+![Image of the Extension](./public/images/extension.png)
+
 # Installation
 Make sure you have installed:
   - Node 10+
