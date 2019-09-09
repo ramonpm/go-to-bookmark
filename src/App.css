@@ -15,6 +15,10 @@ input {
   border-bottom: 1px solid #ccc;
 }
 
+.list-item.active {
+  background-color: #dbe3ff;
+}
+
 .list-item:hover {
   background-color: #dbe3ff;
 }
