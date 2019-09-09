@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/*global chrome*/
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react';
+import './App.css';
+import SearchResultList from './components/SearchResultList';
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      query: '',
+      resultList: []
+    }
+  }
+
+  searchBookmarks = event => {
+    const query = event.target.value;
+    
+    chrome.bookmarks.search(query, (data) => {
+      const resultList = data.filter(item => item.url);
+      this.setState({
+        query,
+        resultList
+      });
+    });
+  }
+
+  render() {
+    const { query, resultList } = this.state;
+
+    return (
+      <div className="App">
+        <input  type="text"
+                name="search"
+                placeholder="Start typing to start searching for your bookmark..."
+                value={query} 
+                onChange={this.searchBookmarks}
+        />
+        <SearchResultList data={resultList}/>
+      </div>
+    );
+  }
 }
 
 export default App;

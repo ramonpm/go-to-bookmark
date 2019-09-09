@@ -1,25 +1,15 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }	    
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "name": "Go To Bookmark",
+  "version": "1.0",
+  "description": "Chrome extension that only does 2 things: search inside your bookmarks and open the chosen one",
+  "permissions": ["bookmarks"],
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Open the popup"
+  },
+  "icons": {
+    "24": "images/icon.png"
+  },
+  "content_security_policy": "script-src 'self' 'sha256-p1WKSDRLazwpIo1hVSgse+vPtlzMta5e9+gKCpVCPLA='; object-src 'self'",
+  "manifest_version": 2
 }
