@@ -9,10 +9,10 @@ You can navigate between options with `Arrow Up` and `Arrow Down`.
 And you can open the bookmark by pressing `Enter`.
 
 # Installation
-You can clone this repository and build it by yourself or You can download the latest version here:
+[Latest version](https://github.com/ramonpm/go-to-bookmark/releases/latest/download/go-to-bookmark.zip)
 
-[Latest version](/ramonpm/go-to-bookmark/releases/latest/download/go-to-bookmark.zip)
+You can clone this repository and build it by yourself or download the latest version above.
 
 1. Open the Extension Management page by navigating to chrome://extensions.
 2. Enable Developer Mode by clicking the toggle switch next to Developer mode.
-3. Click the LOAD UNPACKED button and select the extension directory from step 4.
+3. Click the LOAD UNPACKED button and select the extension directory, either built by yourself or extracted from the latest version.
