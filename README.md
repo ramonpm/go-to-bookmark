@@ -3,16 +3,16 @@ This is a Chrome extension to search and open bookmarks in a quick way. People w
 # How it looks like
 ![Image of the Extension](./public/images/extension.png)
 
-# Installation
-Make sure you have installed:
-  - Node 10+
-  - Yarn
+# Keyboard Interaction
+You can open it at any time by firing `CTRL+SHIFT+F`. (or `COMMAND+SHIFT+F` on Mac)
+You can navigate between options with `Arrow Up` and `Arrow Down`.
+And you can open the bookmark by pressing `Enter`.
 
-Then
-1. Clone this repository
-2. Change directory to the root folder
-3. run `yarn build`
-4. At this point you're going to have a build folder, this is the extension's files
-5. Open the Extension Management page by navigating to chrome://extensions.
-6. Enable Developer Mode by clicking the toggle switch next to Developer mode.
-7. Click the LOAD UNPACKED button and select the extension directory from step 4.
+# Installation
+You can clone this repository and build it by yourself or You can download the latest version here:
+
+[Latest version](/ramonpm/go-to-bookmark/releases/latest/download/go-to-bookmark.zip)
+
+1. Open the Extension Management page by navigating to chrome://extensions.
+2. Enable Developer Mode by clicking the toggle switch next to Developer mode.
+3. Click the LOAD UNPACKED button and select the extension directory from step 4.

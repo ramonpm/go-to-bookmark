@@ -40,14 +40,12 @@ class App extends React.Component {
     const { keyCode } = event;
 
     if (keyCode === this.UP_KEY && cursor > 0) {
-      this.setState(prevState => ({
-        ...prevState,
-        cursor: prevState.cursor - 1
+      this.setState(currentState => ({
+        cursor: currentState.cursor - 1
       }));
     } else if (keyCode === this.DOWN_KEY && cursor < resultList.length - 1) {
-      this.setState(prevState => ({
-        ...prevState,
-        cursor: prevState.cursor + 1
+      this.setState(currentState => ({
+        cursor: currentState.cursor + 1
       }));
     } else if (keyCode === this.ENTER_KEY && cursor < resultList.length) {
       const url = resultList[cursor].url;
@@ -61,6 +59,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <span className="icon" role="img" aria-label="Search icon">🔍</span>
         <input  type="text"
                 name="search"
                 placeholder="Start typing to start searching for your bookmark..."

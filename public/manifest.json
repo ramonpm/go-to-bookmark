@@ -8,7 +8,9 @@
     "default_title": "Open the popup"
   },
   "icons": {
-    "24": "images/icon.png"
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
   },
   "commands": {
     "_execute_browser_action": {
