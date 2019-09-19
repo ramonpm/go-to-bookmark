@@ -5,7 +5,7 @@
   "permissions": ["bookmarks"],
   "browser_action": {
     "default_popup": "index.html",
-    "default_title": "Open the popup"
+    "default_title": "Go To Bookmark"
   },
   "icons": {
     "16": "images/icon-16.png",
