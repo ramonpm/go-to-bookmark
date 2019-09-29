@@ -7,7 +7,7 @@ class SearchResultList extends React.Component {
     return (
       <div className="result-list">
         {data.map((item, index) => (
-          <div key={item.id} className={itemClass + (cursor === index ? ' active' : '')}>
+          <div key={index} className={itemClass + (cursor === index ? ' active' : '')}>
             <a href={item.url} target="_blank" rel="noopener noreferrer">
               {item.title}
             </a>

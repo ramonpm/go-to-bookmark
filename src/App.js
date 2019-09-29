@@ -3,6 +3,7 @@
 import React from 'react';
 import './App.css';
 import SearchResultList from './components/SearchResultList';
+import { uniqueByAttribute } from './libs/array-utils';
 
 class App extends React.Component {
   UP_KEY = 38;
@@ -25,12 +26,18 @@ class App extends React.Component {
   searchBookmarks = event => {
     const query = event.target.value;
     
-    chrome.bookmarks.search(query, (data) => {
-      const resultList = data.filter(item => item.url);
-      this.setState({
-        ...this.state,
-        query,
-        resultList
+    chrome.bookmarks.search(query, (bookmarksData) => {
+      const bookmarkList = bookmarksData.filter(item => item.url);
+
+      chrome.history.search({ text: query }, (historyData) => {
+        const historyList = historyData.filter(item => item.url);
+        const resultList = uniqueByAttribute(bookmarkList.concat(historyList), 'url');
+
+        this.setState({
+          ...this.state,
+          query,
+          resultList
+        });
       });
     });
   }

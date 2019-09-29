@@ -1,8 +1,8 @@
 {
   "name": "Go To Bookmark",
   "version": "1.0",
-  "description": "Chrome extension that only does 2 things: search inside your bookmarks and open the chosen one",
-  "permissions": ["bookmarks"],
+  "description": "Find and open bookmarks or history items quicker than using the browser's address bar",
+  "permissions": ["bookmarks", "history"],
   "browser_action": {
     "default_popup": "index.html",
     "default_title": "Go To Bookmark"
