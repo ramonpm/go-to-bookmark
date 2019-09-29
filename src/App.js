@@ -9,6 +9,9 @@ class App extends React.Component {
   UP_KEY = 38;
   DOWN_KEY = 40;
   ENTER_KEY = 13;
+  WAIT_INTERVAL = 300;
+
+  timeout = null;
 
   constructor() {
     super();
@@ -23,23 +26,34 @@ class App extends React.Component {
     this.refs.search.focus();
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.timeout);
+  }
+
   searchBookmarks = event => {
+    clearTimeout(this.timeout);
     const query = event.target.value;
     
-    chrome.bookmarks.search(query, (bookmarksData) => {
+    this.setState({
+      ...this.state,
+      query
+    });
+
+    this.timeout = setTimeout(() => chrome.bookmarks.search(query, (bookmarksData) => {
       const bookmarkList = bookmarksData.filter(item => item.url);
 
       chrome.history.search({ text: query }, (historyData) => {
         const historyList = historyData.filter(item => item.url);
         const resultList = uniqueByAttribute(bookmarkList.concat(historyList), 'url');
 
-        this.setState({
-          ...this.state,
-          query,
-          resultList
+        this.setState(state => {
+          return {
+            ...state,
+            resultList
+          }
         });
       });
-    });
+    }), this.WAIT_INTERVAL)
   }
 
   handleKeyDown = event => {
